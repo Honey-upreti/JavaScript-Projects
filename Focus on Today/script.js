@@ -6,7 +6,7 @@ const progressBar = document.querySelector('.progress-bar')
 const progressValue = document.querySelector('.progress-value')
 const progresslabel = document.querySelector('.progress-label')
 
-const allquotes = ['Raise the bar by completing your goal!', 'Halfway done!', 'Just a step away, keep going!', 'Whoa! you just completed your all goals, Rest now king!']
+const allquotes = ['Raise the bar by completing your goal!', 'Halfway done!', 'Just a step away, keep going!', 'almost there!', 'Whoa! you just completed your all goals, Rest now king!']
 
 const allGoals = JSON.parse(localStorage.getItem('allGoals')) || {}
 let completedgoalscount = Object.values(allGoals).filter((goals) => goals.completed).length

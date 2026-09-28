@@ -56,7 +56,7 @@ main {
   }
 }
 
-.base-img:hover {
+.image-container:hover .base-img{
   animation: none;
 }
 /* .sun-icon {
