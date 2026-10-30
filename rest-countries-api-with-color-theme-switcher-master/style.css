@@ -73,3 +73,19 @@ header {
 .card-text p {
   margin: 8px;
 }
+
+
+
+
+
+@media(max-width: 760px){
+  .countries-container{
+    justify-content: center;
+  }
+  .title{
+    font-size: 16px;
+  }
+  .header-content p{
+    font-size: 12px;
+  }
+}
