@@ -1,8 +1,23 @@
+.body{
+    --background-color: white;
+  --text-color: black;
+  --element-color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+body.dark{
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: white;
+  --element-color: hsl(209, 23%, 22%);
+}
+
 .back-button{
     padding: 6px 24px;
   box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.4);
 border-radius: 4px;
 cursor: pointer;
+background-color: var(--element-color);
+  color: var(--text-color);
 }
 .country-details-container{
     max-width: 1200px;

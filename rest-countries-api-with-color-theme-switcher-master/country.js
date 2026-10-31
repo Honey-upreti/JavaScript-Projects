@@ -35,3 +35,14 @@ fetch("./data.json")
   });
 }
   });
+
+  const themechanger = document.querySelector('.theme-changer')
+
+  themechanger.addEventListener('click',()=>{
+    document.body.classList.toggle('dark')
+ if (document.body.classList.contains('dark')) {
+    themechanger.innerHTML = '<i class="fa-regular fa-sun"></i>&nbsp;&nbsp;Light Mode';
+  } else {
+    themechanger.innerHTML = '<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode';
+  }
+  })
