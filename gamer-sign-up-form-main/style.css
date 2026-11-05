@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+background-color: hsl(214 37% 4%);
+font-family: Orbitron, sans-serif;
+}
+
+main{
+    padding: 120px;
+display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    min-height: 100vh;
+    
+}
+
+.intro-panel{
+    max-width: 520px;
+}
+
+.heading-decoration{
+    display: flex;
+    
+}
+.main-heading p{
+    font-size: 10px;
+    color: hsl(211 18% 68%);
+    font-weight: 300;
+    margin-bottom: 32px;
+    word-spacing: 8px;
+    letter-spacing: 2px;
+}
+
+hr{
+    margin-bottom: 16px;
+    border: 0.1px solid hsl(211 18% 68%);
+}
+
+.main-heading h1{
+    font-size: 54px;
+    color: white;
+    margin-bottom: 16px;
+}
+.sign-up-status{
+    color: hsl(211 18% 68%);
+    font-family: JetBrains Mono, sans-serif;
+}
+
+.operator-id{
+    text-transform: uppercase;
+    font-size: 12px;
+display: flex;
+justify-content: space-between;
+margin-bottom: 8px;
+}
+
+.name{
+    font-size: 24px;
+    text-transform: uppercase;
+margin-bottom: 8px;
+
+}
+
+.textfield-status{
+    list-style-type: none;
+}
+.textfield-status li{
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
