@@ -1,79 +1,170 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-body{
-background-color: hsl(214 37% 4%);
-font-family: Orbitron, sans-serif;
+body {
+  background-color: rgb(6, 9, 14);
+  font-family: Orbitron, sans-serif;
 }
 
-main{
-    padding: 120px;
-display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    min-height: 100vh;
-    
+main {
+  padding: 110px 144px;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  min-height: 100vh;
+  gap: 78px;
 }
 
-.intro-panel{
-    max-width: 520px;
+.intro-panel {
+  max-width: 580px;
+  margin-top: 32px;
 }
 
-.heading-decoration{
-    display: flex;
-    
-}
-.main-heading p{
-    font-size: 10px;
-    color: hsl(211 18% 68%);
-    font-weight: 300;
-    margin-bottom: 32px;
-    word-spacing: 8px;
-    letter-spacing: 2px;
+.logo {
+  display: block;
+  margin-bottom: 54px;
 }
 
-hr{
-    margin-bottom: 16px;
-    border: 0.1px solid hsl(211 18% 68%);
+.heading-decoration {
+  display: flex;
+}
+.tagline {
+  font-size: 10px;
+  color: hsl(211 18% 68%);
+  font-weight: 300;
+  margin-bottom: 32px;
+  word-spacing: 8px;
+  letter-spacing: 1px;
 }
 
-.main-heading h1{
-    font-size: 54px;
-    color: white;
-    margin-bottom: 16px;
-}
-.sign-up-status{
-    color: hsl(211 18% 68%);
-    font-family: JetBrains Mono, sans-serif;
+hr {
+  width: 100%;
+  margin-bottom: 16px;
+  border: none;
+  border-top: 1px solid hsl(211 13% 25%);
 }
 
-.operator-id{
-    text-transform: uppercase;
-    font-size: 12px;
-display: flex;
-justify-content: space-between;
-margin-bottom: 8px;
+.heading-decoration {
+  display: flex;
+  gap: 12px;
 }
 
-.name{
-    font-size: 24px;
-    text-transform: uppercase;
-margin-bottom: 8px;
-
+.heading-decoration span {
+  display: block;
+  width: 12px;
+  height: 48px;
+  margin-top: 20px;
+  background-color: #baff00;
+  clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
 }
 
-.textfield-status{
-    list-style-type: none;
+.main-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
-.textfield-status li{
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    font-size: 10px;
-    font-weight: 300;
-    text-transform: uppercase;
+
+.main-heading h1 {
+  font-size: 64px;
+  color: white;
+  margin-bottom: 16px;
+  letter-spacing: 3px;
+}
+.sign-up-status {
+  color: hsl(211 13% 55%);
+  font-family:
+    JetBrains Mono,
+    sans-serif;
+}
+
+.operator-id {
+  text-transform: uppercase;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.textfield-status {
+  list-style-type: none;
+}
+.textfield-status li {
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+.textfield-status li span:first-child {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+}
+
+.textfield-status li span:first-child::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted hsl(211 13% 55%);
+}
+
+.textfield-status li span:last-child {
+  margin-left: 8px;
+}
+
+.sign-up {
+  width: 420px;
+  background-color: #0b121a;
+  border: 0.1px solid hsl(211 13% 55%);
+  padding: 32px;
+}
+
+.form-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: hsl(211 18% 68%);
+    margin-bottom: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: hsl(211 13% 55%);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.form-group input{
+    padding: 8px;
+    background-color: #06090E;
+    border: 1px solid hsl(211 13% 35%);
+    color: #e8edf5;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: hsl(77 90% 59%);
+}
+
+.form-group input::placeholder {
+    font-size: 12px;
 }

@@ -27,10 +27,13 @@
           <img src="assets/images/logo.svg" alt="NEONCORE" />
         </span>
         <div class="main-heading">
-          <img src="" alt="" />
+          <div class="heading-decoration">
+            <span></span>
+            <span></span>
+          </div>
           <h1>JOIN THE NEXUS</h1>
-          <p>INITIALIZE YOUR NEONCORE IDENTITY</p>
         </div>
+        <p class="tagline">INITIALIZE YOUR NEONCORE IDENTITY</p>
         <hr />
         <div class="sign-up-status">
           <div class="operator-id">
@@ -65,7 +68,37 @@
           </ul>
         </div>
       </div>
-      <div class="sign-up"></div>
+      <div class="sign-up">
+        <div class="form-header">
+          <span>NEW OPERATOR</span>
+          <span>ALL FIELD REQUIRED</span>
+        </div>
+        <hr />
+        <form action="">
+          <div class="form-group">
+            <label for="callsign">CALLSIGN</label>
+
+            <input type="text" id="callsign" placeholder="e.g. Vortex_07" />
+
+            <small>3–20 characters: letters, numbers, _ or -</small>
+          </div>
+          <div class="form-group">
+            <label for="email">EMAIL</label>
+
+            <input type="email" id="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="password">PASSWORD</label>
+
+            <input type="password" id="password" placeholder="" />
+          </div>
+          <div class="form-group">
+            <label for="password">CONFIRM PASSWORD</label>
+
+            <input type="text" id="confirm-password" placeholder="" />
+          </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
