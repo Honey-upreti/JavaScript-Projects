@@ -198,6 +198,38 @@ hr {
   justify-content: space-between;
 }
 
+.error{
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  visibility: hidden;
+}
+
+.error img{
+  width: 8%;
+}
+.confirm-error{
+  color: #ff4545;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  visibility: hidden;
+}
+
+.confirm-error.show{
+  visibility: visible;
+}
+
+.confirm-error img{
+  width: 4%;
+}
+
+.error.not-filled{
+  visibility: visible;
+  color: #ff4545;
+
+}
+
 .indicator.weak {
   color: #ff4545;
 }

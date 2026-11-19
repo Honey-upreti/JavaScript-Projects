@@ -1,6 +1,11 @@
 const toggleButtons = document.querySelectorAll(".toggle-password");
 const passwordInput = document.querySelector("#password");
+const confirmPasswordInput = document.querySelector("#confirm-password");
 const indicator = document.querySelector(".indicator");
+const passworderror = document.querySelector(".error");
+const strengthBarsContainer = document.querySelector(".strength-bars");
+const confirmerror = document.querySelector(".confirm-error-text");
+const confirmerrorcontainer = document.querySelector(".confirm-error")
 
 toggleButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -17,7 +22,6 @@ toggleButtons.forEach((button) => {
   });
 });
 
-const strengthBars = document.querySelectorAll(".strength-bars span");
 
 passwordInput.addEventListener("input", () => {
   const password = passwordInput.value;
@@ -33,26 +37,44 @@ passwordInput.addEventListener("input", () => {
     Number(hasLowercase) +
     Number(hasNumber);
   if (password.length === 0) {
+    passworderror.classList.remove("not-filled");
     indicator.innerText = "";
     strengthBarsContainer.className = "strength-bars";
-
-  } else if (score <= 1) {
+  } else if (hasMinLength === false) {
+    passworderror.classList.add("not-filled");
     indicator.className = "indicator weak";
     indicator.innerText = "WEAK";
     strengthBarsContainer.className = "strength-bars weak";
-  } else if (score <= 3) {
-    indicator.className = "indicator fair";
-    indicator.innerText = "FAIR";
-    strengthBarsContainer.className = "strength-bars fair";
-  } else if (score <= 4) {
-    indicator.className = "indicator good";
-    indicator.innerText = "GOOD";
-    strengthBarsContainer.className = "strength-bars good";
   } else {
-    indicator.className = "indicator strong";
-    indicator.innerText = "STRONG";
-    strengthBarsContainer.className = "strength-bars strong";
+    passworderror.classList.remove("not-filled");
+    if (score <= 2) {
+      indicator.className = "indicator weak";
+      indicator.innerText = "WEAK";
+      strengthBarsContainer.className = "strength-bars weak";
+    } else if (score <= 3) {
+      indicator.className = "indicator fair";
+      indicator.innerText = "FAIR";
+      strengthBarsContainer.className = "strength-bars fair";
+    } else if (score <= 4) {
+      indicator.className = "indicator good";
+      indicator.innerText = "GOOD";
+      strengthBarsContainer.className = "strength-bars good";
+    } else {
+      passworderror.classList.remove("not-filled");
+      indicator.className = "indicator strong";
+      indicator.innerText = "STRONG";
+      strengthBarsContainer.className = "strength-bars strong";
+    }
   }
 });
 
-const strengthBarsContainer = document.querySelector(".strength-bars");
+confirmPasswordInput.addEventListener('input',()=>{
+  if (confirmPasswordInput.value.length === 0 ||
+    confirmPasswordInput.value === passwordInput.value) {
+      confirmerrorcontainer.classList.remove('show')
+  confirmerror.innerText = "";
+} else {
+  confirmerrorcontainer.classList.add('show')
+  confirmerror.innerText = "Password doesn't match";
+}
+})
