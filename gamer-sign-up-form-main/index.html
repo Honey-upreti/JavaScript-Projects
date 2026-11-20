@@ -38,32 +38,32 @@
         <div class="sign-up-status">
           <div class="operator-id">
             <p>Operator ID</p>
-            <p>0/5 Ready</p>
+            <p class="ready-count">0/5 Ready</p>
           </div>
           <div class="name">unassigned</div>
           <ul class="textfield-status">
             <li>
               <span>CALLSIGN </span>
 
-              <span>Pending</span>
+              <span class="callsign-status">Pending</span>
             </li>
             <li>
               <span>EMAIL</span>
 
-              <span>Pending</span>
+              <span class="email-status">Pending</span>
             </li>
             <li>
               <span>PASSWORD</span>
 
-              <span>Pending</span>
+              <span class="password-status">Pending</span>
             </li>
             <li>
               <span>CONFIRM</span>
-              <span>Pending</span>
+              <span class="confirm-status">Pending</span>
             </li>
             <li>
               <span>TERMS</span>
-              <span>Pending</span>
+              <span class="terms-status">Pending</span>
             </li>
           </ul>
         </div>
@@ -73,25 +73,60 @@
           <span>NEW OPERATOR</span>
           <span>ALL FIELD REQUIRED</span>
         </div>
-        <hr />
+        <hr class="line" />
         <form action="">
           <div class="form-group">
             <label for="callsign">CALLSIGN</label>
 
-            <input type="text" id="callsign" placeholder="e.g. Vortex_07" />
+            <input
+              type="text"
+              id="callsign"
+              placeholder="e.g. Vortex_07"
+              minlength="3"
+              maxlength="20"
+              pattern="[A-Za-z0-9_\-]+"
+              required
+            />
+            <small class="callsign-hint">
+              3–20 characters: letters, numbers, _ or -
+            </small>
 
-            <small>3–20 characters: letters, numbers, _ or -</small>
+            <div class="name-suggestion">
+              <img src="/assets/images/icon-alert.svg" alt="" />
+              <small class="callsign-error"></small>
+            </div>
           </div>
           <div class="form-group">
             <label for="email">EMAIL</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              required
+            />
 
-            <input type="email" id="email" placeholder="you@example.com" />
+            <div class="email-error">
+              <img src="/assets/images/icon-alert.svg" alt="" />
+              <small class="email-error-text"
+                >Enter a valid email, like you@example.com</small
+              >
+            </div>
           </div>
           <div class="form-group">
             <label for="password">PASSWORD</label>
             <div class="password-wrapper">
-              <input type="password" id="password" placeholder="" />
-              <img src="/assets/images/icon-eye.svg" alt="" class="toggle-password"/>
+              <input
+                type="password"
+                id="password"
+                minlength="8"
+                placeholder=""
+                required
+              />
+              <img
+                src="/assets/images/icon-eye.svg"
+                alt=""
+                class="toggle-password"
+              />
             </div>
             <div class="password-strength">
               <div class="strength-bars">
@@ -101,24 +136,33 @@
                 <span></span>
               </div>
               <div class="password-suggestion">
-              <small class="error">
-                <img src="/assets/images/icon-alert.svg" alt="">
-               Use At least 8 characters</small>
-              <small class="indicator"></small>
+                <small class="error">
+                  <img src="/assets/images/icon-alert.svg" alt="" />
+                  Use At least 8 characters</small
+                >
+                <small class="indicator"></small>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label for="password">CONFIRM PASSWORD</label>
+            <label for="confirm-password">CONFIRM PASSWORD</label>
             <div class="password-wrapper">
-              <input type="password" id="confirm-password" placeholder="" />
-              <img src="/assets/images/icon-eye.svg" alt="" class="toggle-password"/>
+              <input
+                type="password"
+                id="confirm-password"
+                placeholder=""
+                required
+              />
+              <img
+                src="/assets/images/icon-eye.svg"
+                alt=""
+                class="toggle-password"
+              />
             </div>
             <div class="confirm-error">
-              <img src="/assets/images/icon-alert.svg" alt="">
-            <small class="confirm-error-text">
-              </small>
-              </div>
+              <img src="/assets/images/icon-alert.svg" alt="" />
+              <small class="confirm-error-text"> </small>
+            </div>
           </div>
           <div class="termsandprivacy">
             <input type="checkbox" id="terms" />
@@ -127,8 +171,24 @@
               <a href="">Privacy Policy</a>.</label
             >
           </div>
+          <div class="terms-error">
+            <img src="/assets/images/icon-alert.svg" alt="" />
+            <small class="terms-error-text">Accept the terms to continue</small>
+          </div>
           <button type="submit" class="submit">Initialize Account</button>
         </form>
+        <div class="success-card">
+          <img src="/assets/images/icon-hex-check.svg" alt="" />
+          <div class="success-heading">
+            <div class="heading-decoration">
+              <span></span>
+              <span></span>
+            </div>
+            <h2>HANDSHAKE COMPLETE</h2>
+          </div>
+          <p class="description"></p>
+          <button type="button" class="login">Continue to log in</button>
+        </div>
         <p class="login-link">Already have an account? <a href="#">Login</a></p>
       </div>
     </main>

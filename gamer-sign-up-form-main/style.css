@@ -12,14 +12,14 @@ body {
 main {
   background-image: url(/assets/images/pattern-backdrop.svg);
   background-repeat: no-repeat;
-  background-position: right -280px center;
-  background-size: 860px;
+  background-position: right -300px top -36px;
+  background-size: 920px;
   padding: 80px 60px;
   display: flex;
   justify-content: center;
   /* align-items: center; */
   min-height: 100vh;
-  gap: 78px;
+  gap: 84px;
 }
 .intro-panel {
   max-width: 580px;
@@ -57,11 +57,11 @@ hr {
 
 .heading-decoration span {
   display: block;
-  width: 12px;
+  width: 8px;
   height: 48px;
   margin-top: 20px;
   background-color: #baff00;
-  clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
+  transform: skewX(-25deg);
 }
 
 .main-heading {
@@ -91,10 +91,23 @@ hr {
   margin-bottom: 8px;
 }
 
+.complete {
+  color: #baff00;
+}
+.submit.transmitted {
+  background-color: #0b121a;
+  color: #baff00;
+  border: 1px solid #baff00;
+}
+
 .name {
   font-size: 24px;
   text-transform: uppercase;
   margin-bottom: 8px;
+}
+
+.Name-color {
+  color: white;
 }
 
 .textfield-status {
@@ -127,15 +140,39 @@ hr {
 }
 
 .sign-up {
-  width: 460px;
+  position: relative;
+  max-width: 580px;
   background-color: #0b121a;
   border: 0.1px solid hsl(211 13% 55%);
   padding: 32px;
+}
+.sign-up::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 35px;
+  height: 35px;
+  border-top: 2px solid #baff00;
+  border-left: 2px solid #baff00;
+}
+
+/* Bottom-right corner */
+.sign-up::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 35px;
+  height: 35px;
+  border-bottom: 2px solid #baff00;
+  border-right: 2px solid #baff00;
 }
 
 .form-header {
   display: flex;
   justify-content: space-between;
+  gap: 6px;
   align-items: center;
   font-family: "JetBrains Mono", monospace;
   font-size: 10px;
@@ -162,6 +199,38 @@ hr {
   font-family: "JetBrains Mono", monospace;
   font-size: 14px;
   outline: none;
+}
+
+.name-suggestion {
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  display: none;
+}
+
+.name-suggestion.show {
+  display: flex;
+  color: #ff4545;
+}
+
+.name-suggestion img {
+  width: 14px;
+}
+
+.email-error {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: #ff4545;
+}
+
+.email-error.show {
+  display: flex;
+}
+
+.email-error img {
+  width: 14px;
 }
 
 .password-wrapper {
@@ -193,22 +262,22 @@ hr {
   background-color: #26313b;
 }
 
-.password-suggestion{
+.password-suggestion {
   display: flex;
   justify-content: space-between;
 }
 
-.error{
+.error {
   display: flex;
   gap: 9px;
   align-items: center;
   visibility: hidden;
 }
 
-.error img{
+.error img {
   width: 8%;
 }
-.confirm-error{
+.confirm-error {
   color: #ff4545;
   display: flex;
   gap: 9px;
@@ -216,18 +285,17 @@ hr {
   visibility: hidden;
 }
 
-.confirm-error.show{
+.confirm-error.show {
   visibility: visible;
 }
 
-.confirm-error img{
+.confirm-error img {
   width: 4%;
 }
 
-.error.not-filled{
+.error.not-filled {
   visibility: visible;
   color: #ff4545;
-
 }
 
 .indicator.weak {
@@ -317,6 +385,26 @@ input[type="checkbox"]:checked::before {
   text-decoration: underline;
 }
 
+.terms-error {
+  display: none;
+  align-items: center;
+  font-family: "JetBrains Mono", monospace;
+  gap: 9px;
+  color: #ff4545;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.terms-error.show {
+  display: flex;
+}
+
+.terms-error img {
+  width: 14px;
+}
+.termsandprivacy:has(+ .terms-error.show) input[type="checkbox"] {
+  border-color: #ff4545;
+}
 .submit {
   width: 100%;
   padding: 12px;
@@ -361,10 +449,93 @@ input[type="checkbox"]:checked::before {
   text-decoration: underline;
 }
 
-@media (max-width: 750px) {
+.success-card {
+  display: none;
+  padding-top: 108px;
+}
+
+.success-heading {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+.success-heading .heading-decoration {
+  width: 28px;
+  gap: 5px;
+}
+
+.success-heading .heading-decoration span {
+  max-width: 4px;
+  height: 20px;
+  margin-top: 0;
+}
+.success-card h2 {
+  color: white;
+  font-weight: 400;
+}
+
+.description {
+  color: hsl(211 18% 68%);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+
+  margin-top: 12px;
+}
+.highlight-callsign {
+  color: #baff00;
+}
+
+.login {
+  width: 100%;
+  padding: 12px;
+  margin-top: 18px;
+
+  background-color: #baff00;
+  color: #06090e;
+  border: none;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+@media (max-width: 950px) {
   main {
     flex-direction: column;
     align-items: center;
     background-image: none;
+    
+  }
+  main{
+    padding: 80px 25px;
+  }
+  .main-heading h1{
+    font-size: 42px;
+  }.heading-decoration span{
+    height: 32px;
+  }.sign-up-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.operator-id {
+  margin-bottom: 0;
+}
+
+.name {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+  .textfield-status{
+    display: none;
+  }.ready-count{
+    display: none;
   }
 }
